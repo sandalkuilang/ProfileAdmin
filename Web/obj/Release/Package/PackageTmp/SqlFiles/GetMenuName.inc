@@ -1,0 +1,13 @@
+﻿SELECT VALUE, TEXT FROM 
+(
+	SELECT VALUE, TEXT FROM (
+		SELECT '' VALUE,
+				'Any Value' Text
+		UNION ALL 
+		SELECT DISTINCT(NAME) Value, NAME Text
+		FROM MENU 
+	) X  
+	EXCEPT
+	SELECT '' Value, '' Text
+) A
+ORDER BY VALUE

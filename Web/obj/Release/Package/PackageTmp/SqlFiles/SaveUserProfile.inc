@@ -1,0 +1,19 @@
+﻿UPDATE USER_PROFILE
+SET NAME = @Name,
+	EMAIL = @Email,
+	DIVISION = @Division,
+	SUBDIVISION = @SubDivision,
+	DEPARTMENT = @Department,
+	ISBACKUP = @IsBackup,
+	ISACTIVE = @IsActive, 
+	MODIFIEDBY = @ModifiedBy,
+	MODIFIEDDATE = GETDATE()
+WHERE NETWORK_ID = @NetworkId
+	AND APPLICATION = @Application 
+
+UPDATE USER_ROLE
+SET ROLE_ID = @RoleId,
+	MODIFIED_BY = @ModifiedBy,
+	MODIFIED_DATE = GETDATE()
+WHERE NETWORK_ID = @NetworkId
+	AND APPLICATION = @Application

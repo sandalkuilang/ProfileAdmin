@@ -1,0 +1,3 @@
+﻿DELETE ROLE_MENU
+WHERE ROLE_ID = @RoleId AND MENU_ID = @MenuId
+	AND APPLICATION = @Application
